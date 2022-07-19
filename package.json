@@ -1,9 +1,12 @@
 {
-  "name": "react-kawaii",
+  "name": "@italodeandra/react-kawaii",
   "version": "0.17.0",
   "description": "React Kawaii is a library of cute SVG illustrations (react components). Ideal if you want to give some cuteness and personality to your react application.",
   "main": "lib/index.js",
   "module": "lib/es/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "test": "",
     "styleguide": "styleguidist server",
@@ -11,11 +14,8 @@
     "now-build": "styleguidist build",
     "lib:build": "webpack -p --progress && babel src --out-dir lib/es/ --sourceMaps && babel native --out-dir lib/native/ --sourceMaps",
     "precommit": "pretty-quick --staged",
-    "prepare": "npm run lib:build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/miukimiu/react-kawaii.git"
+    "prepare": "npm run lib:build",
+    "publish:github": "npm run prepare && npm publish"
   },
   "keywords": [
     "library",
